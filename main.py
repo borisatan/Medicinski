@@ -4,6 +4,8 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 import smtplib
+import driver
+import chromedriver_autoinstaller
 from email.message import EmailMessage
 
 def emailAlert():
@@ -11,7 +13,7 @@ def emailAlert():
     password = "zsyh oqig vtyg hqwz" # app password
     content = "Излязъл e спорта и/или чуждите езици."
 
-    server = smtplib.SMTP("smtp@gmail.com", 587)
+    server = smtplib.SMTP("smtp@gmail.com", 50000)
     server.starttls()
 
     server.login(user, password)
@@ -22,6 +24,8 @@ def emailAlert():
 def websiteMan():
     # url to open and initializing web driver
     url = "https://deos.mu-sofia.bg/"
+    chromedriver_autoinstaller.install()
+
     options = webdriver.ChromeOptions()
     service = Service()
 
